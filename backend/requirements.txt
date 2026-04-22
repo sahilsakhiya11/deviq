@@ -1,0 +1,12 @@
+fastapi
+uvicorn[standard]
+openai
+rank-bm25
+python-dotenv
+pydantic
+requests
+urllib3
+slowapi
+httpx
+pytest
+pytest-asyncio

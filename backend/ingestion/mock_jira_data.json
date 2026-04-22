@@ -1,0 +1,362 @@
+[
+  {
+    "id": "USCM-1042",
+    "summary": "Enable mTLS for Global Platform services",
+    "description": "Mutual TLS must be enabled for all platform-facing services in the Global Platform Readiness epic. The current gap is between internal service-to-service traffic and the target security baseline. This work includes certificate rotation validation, ingress updates, and test evidence for secure communication.",
+    "status": "In Progress",
+    "priority": "High",
+    "epic": "Global Platform Readiness",
+    "assignee": "john.smith@bank.com",
+    "sprint": "Sprint 24",
+    "story_points": 5,
+    "labels": [
+      "security",
+      "platform",
+      "mtls"
+    ],
+    "created": "2026-03-15",
+    "updated": "2026-04-10"
+  },
+  {
+    "id": "USCM-1043",
+    "summary": "Migrate payment adapter to Kubernetes namespace",
+    "description": "The payment adapter service must be moved from the legacy deployment model into the shared Kubernetes platform namespace. The migration includes manifest cleanup, environment variable review, and readiness probe alignment. The team also needs rollback steps documented before release approval.",
+    "status": "To Do",
+    "priority": "High",
+    "epic": "Global Platform Readiness",
+    "assignee": "anna.lee@bank.com",
+    "sprint": "Sprint 24",
+    "story_points": 8,
+    "labels": [
+      "kubernetes",
+      "migration",
+      "platform"
+    ],
+    "created": "2026-03-20",
+    "updated": "2026-04-09"
+  },
+  {
+    "id": "USCM-1044",
+    "summary": "Add API gateway rate limiting policies",
+    "description": "API gateway policies need to enforce route-level throttling for external and internal consumers. Current gateway configuration has inconsistent limits and missing defaults for burst traffic. This ticket covers policy updates, validation in non-prod, and release notes for client teams.",
+    "status": "In Review",
+    "priority": "Medium",
+    "epic": "Global Platform Readiness",
+    "assignee": "maria.gomez@bank.com",
+    "sprint": "Sprint 23",
+    "story_points": 3,
+    "labels": [
+      "api-gateway",
+      "traffic",
+      "reliability"
+    ],
+    "created": "2026-03-02",
+    "updated": "2026-04-01"
+  },
+  {
+    "id": "USCM-1045",
+    "summary": "Implement centralized structured logging",
+    "description": "Platform services must emit structured JSON logs to support troubleshooting and auditability. Several services still log plain text without correlation identifiers, which slows down incident analysis. This work standardizes fields such as trace id, service name, environment, and severity level.",
+    "status": "Done",
+    "priority": "Medium",
+    "epic": "Global Platform Readiness",
+    "assignee": "kevin.patel@bank.com",
+    "sprint": "Sprint 23",
+    "story_points": 5,
+    "labels": [
+      "observability",
+      "logging",
+      "compliance"
+    ],
+    "created": "2026-02-18",
+    "updated": "2026-03-28"
+  },
+  {
+    "id": "USCM-1046",
+    "summary": "Create CI/CD quality gate for security scan failures",
+    "description": "The CI/CD pipeline should fail builds automatically when critical security findings are detected. The current process reports vulnerabilities but still allows promotion in some cases. This ticket adds mandatory gating, pipeline messaging, and documentation for override approvals.",
+    "status": "In Progress",
+    "priority": "High",
+    "epic": "Global Platform Readiness",
+    "assignee": "nina.khan@bank.com",
+    "sprint": "Sprint 24",
+    "story_points": 5,
+    "labels": [
+      "cicd",
+      "security",
+      "devsecops"
+    ],
+    "created": "2026-03-22",
+    "updated": "2026-04-11"
+  },
+  {
+    "id": "USCM-1047",
+    "summary": "Document database migration rollback plan",
+    "description": "The team needs a rollback plan for the schema migration planned during platform readiness activities. While the forward migration steps are documented, recovery timing and ownership are still unclear. This ticket captures fallback SQL, communication steps, and verification checkpoints.",
+    "status": "To Do",
+    "priority": "Medium",
+    "epic": "Global Platform Readiness",
+    "assignee": "daniel.cho@bank.com",
+    "sprint": "Sprint 24",
+    "story_points": 2,
+    "labels": [
+      "database",
+      "migration",
+      "runbook"
+    ],
+    "created": "2026-03-23",
+    "updated": "2026-04-08"
+  },
+  {
+    "id": "USCM-1048",
+    "summary": "Run load test for service mesh ingress changes",
+    "description": "Service mesh ingress changes must be load tested before production rollout. There is concern that TLS termination and sidecar overhead may affect latency under peak traffic. This task includes scenario creation, baseline comparison, and a final recommendation for production release.",
+    "status": "In Progress",
+    "priority": "High",
+    "epic": "Global Platform Readiness",
+    "assignee": "sarah.wilson@bank.com",
+    "sprint": "Sprint 24",
+    "story_points": 8,
+    "labels": [
+      "performance",
+      "service-mesh",
+      "load-test"
+    ],
+    "created": "2026-03-25",
+    "updated": "2026-04-12"
+  },
+  {
+    "id": "USCM-1049",
+    "summary": "Add onboarding checklist for new platform engineers",
+    "description": "New platform engineers need a standard onboarding path that includes access setup, deployment basics, and support contacts. Current onboarding is ad hoc and depends too much on tribal knowledge. This ticket captures the baseline checklist and links to the main platform runbooks.",
+    "status": "Done",
+    "priority": "Low",
+    "epic": "Global Platform Readiness",
+    "assignee": "priya.nair@bank.com",
+    "sprint": "Sprint 22",
+    "story_points": 2,
+    "labels": [
+      "onboarding",
+      "documentation",
+      "platform"
+    ],
+    "created": "2026-02-10",
+    "updated": "2026-03-05"
+  },
+  {
+    "id": "USCM-1050",
+    "summary": "Validate compliance evidence for release controls",
+    "description": "Release controls for the platform program require evidence that approvals, test execution, and deployment records are retained. This ticket validates the evidence collection process and identifies gaps before leadership review. It also defines where release artifacts should be stored for audit retrieval.",
+    "status": "In Review",
+    "priority": "High",
+    "epic": "Global Platform Readiness",
+    "assignee": "oliver.brown@bank.com",
+    "sprint": "Sprint 23",
+    "story_points": 3,
+    "labels": [
+      "compliance",
+      "release",
+      "audit"
+    ],
+    "created": "2026-02-28",
+    "updated": "2026-03-30"
+  },
+  {
+    "id": "USCM-1051",
+    "summary": "Refine Grafana dashboard for platform latency tracking",
+    "description": "Leadership wants a cleaner latency dashboard that highlights platform readiness risks instead of raw metrics only. Existing dashboards are too operational and not readable for non-engineering stakeholders. This work adds key latency views, threshold coloring, and service grouping by domain.",
+    "status": "Done",
+    "priority": "Medium",
+    "epic": "Global Platform Readiness",
+    "assignee": "emily.chen@bank.com",
+    "sprint": "Sprint 22",
+    "story_points": 3,
+    "labels": [
+      "grafana",
+      "observability",
+      "dashboard"
+    ],
+    "created": "2026-02-06",
+    "updated": "2026-03-02"
+  },
+  {
+    "id": "USCM-1052",
+    "summary": "Create incident timeline template for Sev2 events",
+    "description": "The platform team needs a repeatable incident timeline template for Sev2 investigations. Post-incident reviews have been inconsistent, which makes trend analysis difficult. This change standardizes timestamps, impact fields, ownership, and remediation follow-up sections.",
+    "status": "Done",
+    "priority": "Low",
+    "epic": "Global Platform Readiness",
+    "assignee": "lucas.martin@bank.com",
+    "sprint": "Sprint 22",
+    "story_points": 1,
+    "labels": [
+      "incident",
+      "template",
+      "operations"
+    ],
+    "created": "2026-02-04",
+    "updated": "2026-02-25"
+  },
+  {
+    "id": "USCM-1053",
+    "summary": "Enable synthetic health checks for core services",
+    "description": "Synthetic checks should validate critical user journeys through the platform stack to improve alert quality. Existing health checks only confirm liveness and do not reflect end-to-end failures. This ticket includes probe design, alert thresholds, and on-call documentation updates.",
+    "status": "In Progress",
+    "priority": "Medium",
+    "epic": "Global Platform Readiness",
+    "assignee": "alex.turner@bank.com",
+    "sprint": "Sprint 23",
+    "story_points": 5,
+    "labels": [
+      "monitoring",
+      "synthetic",
+      "reliability"
+    ],
+    "created": "2026-03-01",
+    "updated": "2026-04-02"
+  },
+  {
+    "id": "USCM-1054",
+    "summary": "Review namespace network policies",
+    "description": "Kubernetes network policies must be reviewed to ensure only approved communication paths remain open between namespaces. Several services still rely on permissive defaults from the old environment. This ticket audits existing policies and proposes least-privilege updates with test coverage.",
+    "status": "To Do",
+    "priority": "High",
+    "epic": "Global Platform Readiness",
+    "assignee": "megan.scott@bank.com",
+    "sprint": "Sprint 24",
+    "story_points": 5,
+    "labels": [
+      "kubernetes",
+      "network-policy",
+      "security"
+    ],
+    "created": "2026-03-24",
+    "updated": "2026-04-07"
+  },
+  {
+    "id": "USCM-1055",
+    "summary": "Prepare release notes generator input format",
+    "description": "A consistent release notes input format is needed so downstream tooling can summarize sprint outcomes cleanly. Ticket summaries and deployment notes vary too much across teams today. This story defines the required fields, examples, and validation expectations for release note generation.",
+    "status": "Done",
+    "priority": "Low",
+    "epic": "Global Platform Readiness",
+    "assignee": "harsh.verma@bank.com",
+    "sprint": "Sprint 22",
+    "story_points": 2,
+    "labels": [
+      "release-notes",
+      "documentation",
+      "process"
+    ],
+    "created": "2026-02-08",
+    "updated": "2026-03-01"
+  },
+  {
+    "id": "USCM-1056",
+    "summary": "Track deployment failure reasons in pipeline metadata",
+    "description": "Deployment failures should include structured reason codes so trend analysis can be automated later. Current failures are visible in logs but difficult to classify at scale. This work adds metadata capture for timeout, approval, environment, configuration, and dependency-related issues.",
+    "status": "In Review",
+    "priority": "Medium",
+    "epic": "Global Platform Readiness",
+    "assignee": "fatima.ali@bank.com",
+    "sprint": "Sprint 23",
+    "story_points": 3,
+    "labels": [
+      "pipeline",
+      "metadata",
+      "analytics"
+    ],
+    "created": "2026-03-05",
+    "updated": "2026-04-01"
+  },
+  {
+    "id": "USCM-1057",
+    "summary": "Create readiness checklist for API consumers",
+    "description": "Consumer teams need a checklist before onboarding onto the shared platform capabilities. Missing prerequisites have caused repeated support loops and late release delays. This checklist covers authentication, rate limits, test data, certificate expectations, and support channels.",
+    "status": "Done",
+    "priority": "Medium",
+    "epic": "Global Platform Readiness",
+    "assignee": "julia.white@bank.com",
+    "sprint": "Sprint 22",
+    "story_points": 2,
+    "labels": [
+      "api",
+      "readiness",
+      "consumer"
+    ],
+    "created": "2026-02-11",
+    "updated": "2026-03-04"
+  },
+  {
+    "id": "USCM-1058",
+    "summary": "Investigate ingress timeout during peak traffic",
+    "description": "Intermittent timeouts were observed at ingress during simulated traffic spikes in non-production. It is not yet clear whether the issue is related to gateway policy, backend saturation, or mesh configuration. This investigation will gather traces, compare historical baselines, and recommend mitigation.",
+    "status": "In Progress",
+    "priority": "High",
+    "epic": "Global Platform Readiness",
+    "assignee": "ryan.moore@bank.com",
+    "sprint": "Sprint 24",
+    "story_points": 8,
+    "labels": [
+      "ingress",
+      "timeout",
+      "performance"
+    ],
+    "created": "2026-03-27",
+    "updated": "2026-04-13"
+  },
+  {
+    "id": "USCM-1059",
+    "summary": "Add service ownership metadata to platform catalog",
+    "description": "The platform catalog should include service owner, support channel, and escalation contact for each core component. This reduces ambiguity during incidents and onboarding. The task also aligns metadata fields with future dashboard and chatbot use cases.",
+    "status": "Done",
+    "priority": "Low",
+    "epic": "Global Platform Readiness",
+    "assignee": "isabella.king@bank.com",
+    "sprint": "Sprint 22",
+    "story_points": 1,
+    "labels": [
+      "catalog",
+      "ownership",
+      "metadata"
+    ],
+    "created": "2026-02-03",
+    "updated": "2026-02-27"
+  },
+  {
+    "id": "USCM-1060",
+    "summary": "Update runbook for certificate renewal process",
+    "description": "Certificate renewal guidance must be refreshed to match the new platform tooling and timelines. The existing runbook refers to deprecated manual steps and outdated owners. This update covers renewal windows, validation checks, rollback options, and escalation contacts.",
+    "status": "In Review",
+    "priority": "Medium",
+    "epic": "Global Platform Readiness",
+    "assignee": "noah.adams@bank.com",
+    "sprint": "Sprint 23",
+    "story_points": 3,
+    "labels": [
+      "certificate",
+      "runbook",
+      "security"
+    ],
+    "created": "2026-03-04",
+    "updated": "2026-03-29"
+  },
+  {
+    "id": "USCM-1061",
+    "summary": "Audit missing traces across platform services",
+    "description": "Distributed traces are missing for parts of the platform path, making troubleshooting slower than expected. The team needs to identify instrumentation gaps and confirm context propagation between services. The result should be a prioritized list of fixes and an implementation owner for each gap.",
+    "status": "To Do",
+    "priority": "Medium",
+    "epic": "Global Platform Readiness",
+    "assignee": "chloe.baker@bank.com",
+    "sprint": "Sprint 24",
+    "story_points": 5,
+    "labels": [
+      "tracing",
+      "observability",
+      "telemetry"
+    ],
+    "created": "2026-03-26",
+    "updated": "2026-04-08"
+  }
+]

@@ -1,0 +1,132 @@
+{
+  "documents": [
+    {
+      "id": "CONF-301",
+      "title": "Global Platform Readiness - Program Overview",
+      "body": "This page tracks the Global Platform Readiness initiative, including scope, outcomes, and cross-team dependencies. The objective is to align services on security, deployment standards, observability, and release governance before the Q3 milestone.",
+      "source": "confluence",
+      "metadata": {
+        "space": "ENG",
+        "labels": [
+          "platform",
+          "program",
+          "readiness"
+        ],
+        "author": "anna.lee@bank.com",
+        "last_updated": "2026-04-14"
+      }
+    },
+    {
+      "id": "CONF-302",
+      "title": "mTLS Rollout Checklist",
+      "body": "Checklist for enabling mutual TLS in platform-facing services. Includes certificate issuance, trust-store validation, ingress policy updates, and regression test evidence. Teams must complete all checks before production approval.",
+      "source": "confluence",
+      "metadata": {
+        "space": "SEC",
+        "labels": [
+          "security",
+          "mtls",
+          "checklist"
+        ],
+        "author": "john.smith@bank.com",
+        "last_updated": "2026-04-12"
+      }
+    },
+    {
+      "id": "CONF-303",
+      "title": "Kubernetes Migration Runbook",
+      "body": "Runbook for moving legacy services into Kubernetes namespaces. Covers pre-migration validation, config mapping, readiness/liveness probes, canary release flow, and rollback criteria with ownership matrix.",
+      "source": "confluence",
+      "metadata": {
+        "space": "PLATFORM",
+        "labels": [
+          "kubernetes",
+          "migration",
+          "runbook"
+        ],
+        "author": "kevin.patel@bank.com",
+        "last_updated": "2026-04-10"
+      }
+    },
+    {
+      "id": "CONF-304",
+      "title": "API Gateway Traffic Policy Standards",
+      "body": "Defines default route-level rate limits, burst controls, and exception process for API gateway routes. Includes reference examples for internal and external consumers and guidance for non-production validation.",
+      "source": "confluence",
+      "metadata": {
+        "space": "ARCH",
+        "labels": [
+          "api-gateway",
+          "standards",
+          "traffic"
+        ],
+        "author": "maria.gomez@bank.com",
+        "last_updated": "2026-04-09"
+      }
+    },
+    {
+      "id": "CONF-305",
+      "title": "Structured Logging Contract",
+      "body": "Logging contract for all platform services. Required JSON fields include trace_id, service_name, environment, severity, and event_type. The page also documents ingestion destinations and retention requirements for audits.",
+      "source": "confluence",
+      "metadata": {
+        "space": "OBS",
+        "labels": [
+          "logging",
+          "observability",
+          "compliance"
+        ],
+        "author": "nina.khan@bank.com",
+        "last_updated": "2026-04-08"
+      }
+    },
+    {
+      "id": "CONF-306",
+      "title": "CI/CD Security Gate Design",
+      "body": "Design note for mandatory CI/CD security gates. Builds must fail on critical findings from dependency and container scans. Override flow requires documented risk acceptance and director-level approval.",
+      "source": "confluence",
+      "metadata": {
+        "space": "DEVSECOPS",
+        "labels": [
+          "cicd",
+          "security",
+          "pipeline"
+        ],
+        "author": "sarah.wilson@bank.com",
+        "last_updated": "2026-04-15"
+      }
+    },
+    {
+      "id": "CONF-307",
+      "title": "Database Migration Rollback Strategy",
+      "body": "Defines rollback strategy for schema migrations in readiness scope. Includes backup timing, rollback SQL templates, comms sequence, and service health checks required before reopening traffic.",
+      "source": "confluence",
+      "metadata": {
+        "space": "DATA",
+        "labels": [
+          "database",
+          "migration",
+          "rollback"
+        ],
+        "author": "daniel.cho@bank.com",
+        "last_updated": "2026-04-11"
+      }
+    },
+    {
+      "id": "CONF-308",
+      "title": "Service Mesh Ingress Load Test Results",
+      "body": "Summary of load test scenarios for service mesh ingress changes. Reports baseline and post-change latency, error rates, and throughput under peak traffic simulation. Recommends configuration adjustments before production rollout.",
+      "source": "confluence",
+      "metadata": {
+        "space": "PERF",
+        "labels": [
+          "service-mesh",
+          "performance",
+          "load-test"
+        ],
+        "author": "sarah.wilson@bank.com",
+        "last_updated": "2026-04-16"
+      }
+    }
+  ]
+}
