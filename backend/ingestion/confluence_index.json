@@ -127,6 +127,59 @@
         "author": "sarah.wilson@bank.com",
         "last_updated": "2026-04-16"
       }
+    },
+    {
+      "id": "CONF-401",
+      "title": "Onboarding Guide for New Engineers",
+      "body": "Welcome to the platform team! This comprehensive guide covers essential onboarding steps for new engineers: 1) Access setup (GitHub, Jira, Confluence, AWS, Slack), 2) Local development environment setup (Docker, Python 3.11, Node 18, Git). 3) Key repositories and naming conventions explained, 4) Communication channels (Slack channels, standup schedule, on-call rotation), 5) Your first task assignment (pair with a senior engineer on a small ticket), 6) Learning resources (internal wiki, architecture docs, runbooks). Expected duration: 2-3 weeks to full productivity. Reach out to the tech lead or onboarding buddy for any questions during the process.",
+      "source": "confluence",
+      "metadata": {
+        "space": "PEOPLE",
+        "labels": [
+          "onboarding",
+          "new-hire",
+          "getting-started",
+          "engineering"
+        ],
+        "author": "priya.nair@bank.com",
+        "last_updated": "2026-04-16"
+      }
+    },
+    {
+      "id": "CONF-402",
+      "title": "Developer Environment Setup",
+      "body": "Setup your local development environment step by step: 1) Install Homebrew (macOS) or apt (Linux). 2) Install Python 3.11: `brew install python@3.11`. 3) Install Node 18: `brew install node@18`. 4) Install Docker Desktop from docker.com. 5) Clone the repository: `git clone https://github.com/yourorg/deviq.git`. 6) Create Python virtual environment: `python3.11 -m venv .venv && source .venv/bin/activate`. 7) Install backend dependencies: `pip install -r backend/requirements.txt`. 8) Install frontend dependencies: `cd frontend && npm install`. 9) Copy .env template and configure your OpenAI API keys. 10) Run locally: `docker-compose up` or `python backend/main.py` + `npm run dev` in separate terminals.",
+      "source": "confluence",
+      "metadata": {
+        "space": "ENGINEERING",
+        "labels": [
+          "setup",
+          "development",
+          "local",
+          "getting-started"
+        ],
+        "author": "kevin.patel@bank.com",
+        "last_updated": "2026-04-15"
+      }
+    },
+    {
+      "id": "CONF-403",
+      "title": "Incident Response Procedures",
+      "body": "Incident response flow and procedures for platform issues: 1) Detection: Alert triggers from monitoring/observability systems (Grafana, Datadog), 2) Triage: On-call engineer acknowledges alert and assesses severity (Sev1/Sev2/Sev3), 3) War Room: For Sev1 incidents, establish Slack channel and invite relevant teams. 4) Investigation: Review logs, metrics, recent deployments, and architecture diagrams to identify root cause. 5) Mitigation: Apply immediate fixes or rollback recent changes to restore service. 6) Communication: Post status updates every 15 minutes to Slack and affected stakeholders. 7) Resolution: Implement permanent fix once service is stable. 8) Post-Mortem: Schedule review within 24-48 hours to document timeline, root cause, and prevention measures. Escalation path: On-call engineer \u2192 Tech lead \u2192 Director. Response time SLA: Sev1 (15min), Sev2 (1hr), Sev3 (4hrs).",
+      "source": "confluence",
+      "metadata": {
+        "space": "OPERATIONS",
+        "labels": [
+          "incident",
+          "response",
+          "procedures",
+          "operations",
+          "sev1",
+          "sev2"
+        ],
+        "author": "lucas.martin@bank.com",
+        "last_updated": "2026-04-16"
+      }
     }
   ]
 }

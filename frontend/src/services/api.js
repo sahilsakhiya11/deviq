@@ -1,7 +1,12 @@
 import axios from "axios";
 
+// In Docker, use /api/ path (nginx proxy). Locally, use env var.
+const baseURL = typeof window !== 'undefined' && window.location.hostname === 'localhost'
+  ? (import.meta.env.VITE_API_BASE_URL || "http://localhost:8000")
+  : "/api";
+
 const api = axios.create({
-  baseURL: import.meta.env.VITE_API_BASE_URL || "/api",
+  baseURL: baseURL,
   headers: {
     "Content-Type": "application/json",
   },

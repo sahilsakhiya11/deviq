@@ -1,0 +1,116 @@
+import json
+from pathlib import Path
+
+
+OUTPUT_PATH = Path(__file__).resolve().parent / "mock_confluence_data.json"
+
+
+def generate_mock_confluence_data() -> list[dict]:
+    pages = [
+        {
+            "page_id": "CONF-301",
+            "title": "Global Platform Readiness - Program Overview",
+            "body": "This page tracks the Global Platform Readiness initiative, including scope, outcomes, and cross-team dependencies. The objective is to align services on security, deployment standards, observability, and release governance before the Q3 milestone.",
+            "space": "ENG",
+            "labels": ["platform", "program", "readiness"],
+            "author": "anna.lee@bank.com",
+            "last_updated": "2026-04-14",
+        },
+        {
+            "page_id": "CONF-302",
+            "title": "mTLS Rollout Checklist",
+            "body": "Checklist for enabling mutual TLS in platform-facing services. Includes certificate issuance, trust-store validation, ingress policy updates, and regression test evidence. Teams must complete all checks before production approval.",
+            "space": "SEC",
+            "labels": ["security", "mtls", "checklist"],
+            "author": "john.smith@bank.com",
+            "last_updated": "2026-04-12",
+        },
+        {
+            "page_id": "CONF-303",
+            "title": "Kubernetes Migration Runbook",
+            "body": "Runbook for moving legacy services into Kubernetes namespaces. Covers pre-migration validation, config mapping, readiness/liveness probes, canary release flow, and rollback criteria with ownership matrix.",
+            "space": "PLATFORM",
+            "labels": ["kubernetes", "migration", "runbook"],
+            "author": "kevin.patel@bank.com",
+            "last_updated": "2026-04-10",
+        },
+        {
+            "page_id": "CONF-304",
+            "title": "API Gateway Traffic Policy Standards",
+            "body": "Defines default route-level rate limits, burst controls, and exception process for API gateway routes. Includes reference examples for internal and external consumers and guidance for non-production validation.",
+            "space": "ARCH",
+            "labels": ["api-gateway", "standards", "traffic"],
+            "author": "maria.gomez@bank.com",
+            "last_updated": "2026-04-09",
+        },
+        {
+            "page_id": "CONF-305",
+            "title": "Structured Logging Contract",
+            "body": "Logging contract for all platform services. Required JSON fields include trace_id, service_name, environment, severity, and event_type. The page also documents ingestion destinations and retention requirements for audits.",
+            "space": "OBS",
+            "labels": ["logging", "observability", "compliance"],
+            "author": "nina.khan@bank.com",
+            "last_updated": "2026-04-08",
+        },
+        {
+            "page_id": "CONF-306",
+            "title": "CI/CD Security Gate Design",
+            "body": "Design note for mandatory CI/CD security gates. Builds must fail on critical findings from dependency and container scans. Override flow requires documented risk acceptance and director-level approval.",
+            "space": "DEVSECOPS",
+            "labels": ["cicd", "security", "pipeline"],
+            "author": "sarah.wilson@bank.com",
+            "last_updated": "2026-04-15",
+        },
+        {
+            "page_id": "CONF-307",
+            "title": "Database Migration Rollback Strategy",
+            "body": "Defines rollback strategy for schema migrations in readiness scope. Includes backup timing, rollback SQL templates, comms sequence, and service health checks required before reopening traffic.",
+            "space": "DATA",
+            "labels": ["database", "migration", "rollback"],
+            "author": "daniel.cho@bank.com",
+            "last_updated": "2026-04-11",
+        },
+        {
+            "page_id": "CONF-308",
+            "title": "Service Mesh Ingress Load Test Results",
+            "body": "Summary of load test scenarios for service mesh ingress changes. Reports baseline and post-change latency, error rates, and throughput under peak traffic simulation. Recommends configuration adjustments before production rollout.",
+            "space": "PERF",
+            "labels": ["service-mesh", "performance", "load-test"],
+            "author": "sarah.wilson@bank.com",
+            "last_updated": "2026-04-16",
+        },
+        {
+            "page_id": "CONF-401",
+            "title": "Onboarding Guide for New Engineers",
+            "body": "Welcome to the platform team! This comprehensive guide covers essential onboarding steps for new engineers: 1) Access setup (GitHub, Jira, Confluence, AWS, Slack), 2) Local development environment setup (Docker, Python 3.11, Node 18, Git). 3) Key repositories and naming conventions explained, 4) Communication channels (Slack channels, standup schedule, on-call rotation), 5) Your first task assignment (pair with a senior engineer on a small ticket), 6) Learning resources (internal wiki, architecture docs, runbooks). Expected duration: 2-3 weeks to full productivity. Reach out to the tech lead or onboarding buddy for any questions during the process.",
+            "space": "PEOPLE",
+            "labels": ["onboarding", "new-hire", "getting-started", "engineering"],
+            "author": "priya.nair@bank.com",
+            "last_updated": "2026-04-16",
+        },
+        {
+            "page_id": "CONF-402",
+            "title": "Developer Environment Setup",
+            "body": "Setup your local development environment step by step: 1) Install Homebrew (macOS) or apt (Linux). 2) Install Python 3.11: `brew install python@3.11`. 3) Install Node 18: `brew install node@18`. 4) Install Docker Desktop from docker.com. 5) Clone the repository: `git clone https://github.com/yourorg/deviq.git`. 6) Create Python virtual environment: `python3.11 -m venv .venv && source .venv/bin/activate`. 7) Install backend dependencies: `pip install -r backend/requirements.txt`. 8) Install frontend dependencies: `cd frontend && npm install`. 9) Copy .env template and configure your OpenAI API keys. 10) Run locally: `docker-compose up` or `python backend/main.py` + `npm run dev` in separate terminals.",
+            "space": "ENGINEERING",
+            "labels": ["setup", "development", "local", "getting-started"],
+            "author": "kevin.patel@bank.com",
+            "last_updated": "2026-04-15",
+        },
+        {
+            "page_id": "CONF-403",
+            "title": "Incident Response Procedures",
+            "body": "Incident response flow and procedures for platform issues: 1) Detection: Alert triggers from monitoring/observability systems (Grafana, Datadog), 2) Triage: On-call engineer acknowledges alert and assesses severity (Sev1/Sev2/Sev3), 3) War Room: For Sev1 incidents, establish Slack channel and invite relevant teams. 4) Investigation: Review logs, metrics, recent deployments, and architecture diagrams to identify root cause. 5) Mitigation: Apply immediate fixes or rollback recent changes to restore service. 6) Communication: Post status updates every 15 minutes to Slack and affected stakeholders. 7) Resolution: Implement permanent fix once service is stable. 8) Post-Mortem: Schedule review within 24-48 hours to document timeline, root cause, and prevention measures. Escalation path: On-call engineer → Tech lead → Director. Response time SLA: Sev1 (15min), Sev2 (1hr), Sev3 (4hrs).",
+            "space": "OPERATIONS",
+            "labels": ["incident", "response", "procedures", "operations", "sev1", "sev2"],
+            "author": "lucas.martin@bank.com",
+            "last_updated": "2026-04-16",
+        },
+    ]
+    return pages
+
+
+if __name__ == "__main__":
+    data = generate_mock_confluence_data()
+    OUTPUT_PATH.write_text(json.dumps(data, indent=2), encoding="utf-8")
+    print(f"Generated {len(data)} Confluence pages to {OUTPUT_PATH}")

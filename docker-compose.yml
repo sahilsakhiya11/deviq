@@ -1,0 +1,26 @@
+services:
+  deviq-api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: backend
+    container_name: deviq-api
+    ports:
+      - "8000:8000"
+    env_file:
+      - .env
+    volumes:
+      - ./backend/ingestion:/app/backend/ingestion
+
+  deviq-frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: frontend
+    container_name: deviq-frontend
+    ports:
+      - "80:80"
+    depends_on:
+      - deviq-api
+    environment:
+      - VITE_API_BASE_URL=http://deviq-api:8000
