@@ -17,10 +17,12 @@ services:
       context: .
       dockerfile: Dockerfile
       target: frontend
+      args:
+        # For local Docker Compose, frontend uses /api which Nginx proxies to backend
+        # For production, override: docker build --build-arg VITE_API_BASE_URL=https://backend-url
+        VITE_API_BASE_URL: /api
     container_name: deviq-frontend
     ports:
       - "80:80"
     depends_on:
       - deviq-api
-    environment:
-      - VITE_API_BASE_URL=http://deviq-api:8000

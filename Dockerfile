@@ -8,6 +8,11 @@ RUN npm install
 
 COPY frontend . 
 
+# Accept VITE_API_BASE_URL as build arg for production deployments
+# Default to /api for local Docker Compose (Nginx proxies to backend)
+ARG VITE_API_BASE_URL=/api
+ENV VITE_API_BASE_URL=$VITE_API_BASE_URL
+
 RUN npm run build
 
 
