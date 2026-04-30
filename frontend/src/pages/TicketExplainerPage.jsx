@@ -2,7 +2,7 @@ import { useState } from "react";
 import { explainTicket } from "../services/api";
 
 export default function TicketExplainerPage() {
-  const [ticketId, setTicketId] = useState("USCM-1042");
+  const [ticketId, setTicketId] = useState("JIRA-1042");
   const [result, setResult] = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
@@ -43,7 +43,7 @@ export default function TicketExplainerPage() {
               type="text"
               value={ticketId}
               onChange={(e) => setTicketId(e.target.value.toUpperCase())}
-              placeholder="USCM-1042"
+              placeholder="JIRA-1042"
             />
           </div>
 
@@ -57,7 +57,7 @@ export default function TicketExplainerPage() {
         {!result && !loading && !error && (
           <div className="empty-state compact">
             <h4>No ticket loaded</h4>
-            <p>Enter a Jira ticket ID like USCM-1042 to generate a plain-English explanation.</p>
+            <p>Enter a Jira ticket ID like JIRA-1042 to generate a plain-English explanation.</p>
           </div>
         )}
 

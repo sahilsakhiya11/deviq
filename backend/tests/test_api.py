@@ -24,5 +24,5 @@ async def test_chat_validation():
 @pytest.mark.asyncio
 async def test_ticket_explain_validation():
     async with AsyncClient(transport=ASGITransport(app=app), base_url="http://test") as client:
-        response = await client.post("/ticket-explain", json={"ticket_id": "USCM-1042"})
+        response = await client.post("/ticket-explain", json={"ticket_id": "JIRA-1042"})
     assert response.status_code in {200, 429, 500}

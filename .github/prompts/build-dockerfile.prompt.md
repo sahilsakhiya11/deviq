@@ -34,4 +34,4 @@ MAX_TOKENS_REPORT=12000
 - volumes: ./backend/ingestion:/app/backend/ingestion
 
 **`backend/deviq.http`** (REST Client test file)
-Include test requests for: GET /health, POST /chat (jira), POST /chat (confluence), GET /sprint-report?sprint=Sprint 24, POST /ticket-explain with USCM-1042, GET /sync-jira, GET /sync-confluence
+Include test requests for: GET /health, POST /chat (jira), POST /chat (confluence), GET /sprint-report?sprint=Sprint 24, POST /ticket-explain with JIRA-1042, GET /sync-jira, GET /sync-confluence

@@ -7,7 +7,7 @@ Generate the complete file `backend/ingestion/mock_jira.py`.
 
 Requirements:
 - Function `generate_mock_jira_data() -> list[dict]` returns 20 realistic Jira tickets
-- All tickets: project=USCM, epic="Global Platform Readiness"
+- All tickets: project=JIRA, epic="Global Platform Readiness"
 - Cover themes: mTLS, Kubernetes, CI/CD, API gateway, observability, compliance, database migration, load testing, service mesh, documentation
 - Mix of sprints: Sprint 22, Sprint 23, Sprint 24
 - Mix of statuses: "To Do", "In Progress", "In Review", "Done"

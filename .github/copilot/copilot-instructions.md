@@ -65,7 +65,7 @@ deviq/
 Mock Jira Ticket Schema
 json
 {
-  "id": "USCM-1042",
+  "id": "JIRA-1042",
   "summary": "Enable mTLS for Global Platform services",
   "description": "Full description...",
   "status": "In Progress",
