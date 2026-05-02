@@ -56,14 +56,3 @@ flowchart TD
     M2 --> API
     API --> Frontend
 ```
-
-## Component Responsibilities
-
-| Component | Responsibility |
-|---|---|
-| `jira_fetcher.py` | Loads mock Jira JSON, normalizes ticket schema |
-| `confluence_fetcher.py` | Loads mock Confluence JSON, extracts page body |
-| `bm25_indexer.py` | Tokenizes content, builds BM25 corpus, saves index |
-| `query_handler.py` | Tokenizes query, scores corpus, assembles top-k context, calls OpenAI |
-| `FastAPI` | HTTP layer, request validation, rate limiting, response formatting |
-| `Model Router` | Routes to `gpt-4.1-mini` (chat) or `gpt-4.1` (sprint reports/summaries) |
